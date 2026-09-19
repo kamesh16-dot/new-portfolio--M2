@@ -6,10 +6,10 @@ import * as THREE from 'three';
 import CanvasLoader from './CanvasLoader';
 
 const skillsData = [
-  { name: 'React', level: 80, color: '#00f0ff' },
+  { name: 'React', level: 75, color: '#00f0ff' },
   { name: 'Django', level: 50, color: '#00ff9d' },
   { name: 'Python', level: 60, color: '#00ffff' },
-  { name: 'Java', level: 75, color: '#ff0055' },
+  { name: 'Java', level: 60, color: '#ff0055' },
   { name: 'JavaScript', level: 45, color: '#f7df1e' },
   { name: 'HTML/CSS', level: 90, color: '#e34f26' },
   { name: 'PostgreSQL', level: 50, color: '#3366ff' },

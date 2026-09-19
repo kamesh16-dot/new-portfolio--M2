@@ -3,24 +3,40 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 const experienceData = [
   {
-    title: 'Senior Full Stack Developer',
-    company: 'Tech Innovators Inc.',
-    date: '2022 - Present',
-    description: 'Led a team of 5 developers in re-architecting the core product platform. Implemented microservices using Node.js and improved frontend performance by 40% with React and Vite.',
+    title: 'Full Stack Engineer (Part-Time)',
+    company: 'PSD Digitise LLP',
+    date: 'Feb 2026 – Present',
+    location: 'Tamil Nadu',
+    description: [
+      'Develop and maintain full-stack web applications using React.js, Tailwind CSS, Bootstrap, HTML, and CSS.',
+      'Build and consume REST APIs, working across the data layer, debugging, and day-to-day development workflows.',
+      'Collaborate with the development team to implement real-world application features from requirements to implementation.',
+      'Contributed to 3–5 production-facing features and UI components used by end users.'
+    ],
     color: '#00f0ff'
   },
   {
-    title: 'Frontend Developer',
-    company: 'Creative Web Agency',
-    date: '2020 - 2022',
-    description: 'Built award-winning interactive websites with rich 3D animations using Three.js and GSAP. Collaborated closely with UI/UX designers to bring stunning concepts to life.',
+    title: 'University Website — Project',
+    company: 'Dhanalakshmi Srinivasan University',
+    date: '2024',
+    description: [
+      'Developed a responsive university website using React.js, HTML, CSS, and Bootstrap.',
+      'Created reusable React components and structured pages for institutional information.',
+      'Implemented responsive UI/UX for desktop and mobile devices.',
+      'Published the project with source code available on GitHub.'
+    ],
     color: '#b026ff'
   },
   {
-    title: 'Software Engineer Intern',
-    company: 'Global Systems LLC',
-    date: '2019 - 2020',
-    description: 'Developed scalable REST APIs using Python and Django. Integrated automated testing pipelines that reduced bugs in production by 25%.',
+    title: 'ERP Exam Cell — Project',
+    company: 'Personal / Academic Project',
+    date: '2024',
+    description: [
+      'Built an examination-focused ERP interface with student and admin-oriented workflows.',
+      'Developed responsive pages using React.js, HTML, and CSS.',
+      'Implemented reusable UI components and structured application pages.',
+      'Deployed the project on Netlify.'
+    ],
     color: '#00ffff'
   }
 ];
@@ -39,10 +55,29 @@ const ExperienceCard = ({ experience, index }) => {
 
       {/* Content Card */}
       <div className="w-full md:w-5/12 glassmorphism p-6 flex flex-col rounded-2xl border-t-4" style={{ borderColor: experience.color }}>
-        <h3 className="text-2xl font-bold text-white mb-1">{experience.title}</h3>
-        <span className="text-lg font-semibold mb-4" style={{ color: experience.color }}>{experience.company}</span>
-        <p className="text-gray-400 text-sm mb-4">{experience.description}</p>
-        <span className="text-sm font-medium text-gray-500">{experience.date}</span>
+        <div className="flex flex-col xl:flex-row xl:justify-between xl:items-start mb-2 gap-2">
+          <h3 className="text-xl md:text-2xl font-bold text-white">{experience.title}</h3>
+          <span className="text-sm font-medium text-gray-400 whitespace-nowrap xl:mt-1">{experience.date}</span>
+        </div>
+        
+        <div className="flex flex-col xl:flex-row xl:justify-between xl:items-center mb-6 gap-2">
+          <span className="text-md md:text-lg font-semibold" style={{ color: experience.color }}>{experience.company}</span>
+          {experience.location && (
+            <span className="text-sm text-gray-400 flex items-center gap-1">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path></svg>
+              {experience.location}
+            </span>
+          )}
+        </div>
+        
+        <ul className="space-y-3">
+          {experience.description.map((desc, i) => (
+            <li key={i} className="text-gray-300 text-sm flex items-start leading-relaxed">
+              <span className="mr-3 mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: experience.color }}></span>
+              <span>{desc}</span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Node / Marker */}
