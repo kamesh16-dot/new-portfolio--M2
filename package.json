@@ -25,6 +25,13 @@
     "tailwindcss": "^4.2.0",
     "three": "^0.183.1"
   },
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "start": "vite --host 0.0.0.0",
+  "lint": "eslint .",
+  "preview": "vite preview"
+},
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@tailwindcss/vite": "^4.2.0",
